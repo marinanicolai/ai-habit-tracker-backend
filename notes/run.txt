@@ -1,0 +1,30 @@
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+###open the apis in the browser:
+
+uvicorn app.main:app --reload
+
+###Open the API in your browser
+
+Go to http://127.0.0.1:8000 → you'll see a simple "Hello World" or root response.
+
+Go to http://127.0.0.1:8000/docs → Swagger UI for testing your API.
+
+Go to http://127.0.0.1:8000/redoc → alternative API documentation.
+
+
+########
+
+open -a Docker
+
+######### start MongoDB in Docker
+docker run -d --name mongo \
+  -p 27017:27017 \
+  -v mongo-data:/data/db \
+  mongo:7
+
+
+
+
